@@ -6,7 +6,6 @@ import jwt_decode from 'jwt-decode';
 
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
-import { decode } from 'punycode';
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
@@ -24,11 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (decodedUser.exp < currentTime) {
             store.dispatch(logout())
             window.location.href = '/login'
-        } else {
-            store = configureStore({})
         }
-
-        const root = document.getElementById('root')
-        ReactDOM.render(<Root store={store} />, root)
+    } else {
+        store = configureStore({})
     }
+
+    const root = document.getElementById('root')
+    ReactDOM.render(<Root store={store} />, root)
 })

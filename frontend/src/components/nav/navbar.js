@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-// import './navbar.css'
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -18,9 +17,9 @@ class NavBar extends React.Component {
         if (this.props.loggedIn) {
             return (
                 <div>
-                    <Link to={'/tweets'}>All Tweets</Link>
+                    <Link to={'/tweets'}>All Twats</Link>
                     <Link to={'/profile'}>Profile</Link>
-                    <Link to={'/new_tweet'}>Write a Tweet</Link>
+                    <Link to={'/new_tweet'}>Write a Twat</Link>
                     <button onClick={this.logoutUser}>Logout</button>
                 </div>
             );
