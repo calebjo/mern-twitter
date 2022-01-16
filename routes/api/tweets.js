@@ -1,6 +1,7 @@
 const express = require("express")
 const Tweet = require("../../models/Tweet")
 const router = express.Router()
+const passport = require('passport')
 
 router.get('/', (req, res) => {
     Tweet.find()
